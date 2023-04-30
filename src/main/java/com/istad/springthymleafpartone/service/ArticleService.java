@@ -9,4 +9,8 @@ public interface ArticleService {
     Article getArticleByID(int id );
 
     void addNewArticle(Article article);
+    void deleteArticle(Article article);
+
+
+
 }

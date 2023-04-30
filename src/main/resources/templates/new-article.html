@@ -25,27 +25,27 @@
                 <input class="form-control" name="file" th:field="*{file}" type="file" onchange="loadFile(event)">
             </div>
             <div class="input-section ms-3">
-                
-                <h3> New Article </h3>
+
+                <h3> New Student </h3>
                 <div class="d-flex justify-content-between">
                     <div>
-                        <label for="articleTitle"> Article Title </label>
+                        <label for="articleTitle"> Student Name </label>
                         <input class="form-control" id="articleTitle" type="text" th:field="*{title}">
                         <div class="form-text text-danger " th:errors="*{title}"> </div>
                     </div>
                     <div>
-                        <label for="authorSelect"> Choose Author</label>
-                        <select id="authorSelect" th:field="*{authorID}"  class="form-select">
+                        <label for="authorSelect"> Choose Teacher Input</label>
+                        <select id="authorSelect" th:field="*{authorId}"  class="form-select">
                             <option value="0"> Choose Author </option>
                             <option th:each="author : ${authors}"  th:value="${author.id}" th:text="${author.name}">One </option>
 
                         </select>
                     </div>
-                    
+
                 </div>
-              
-                
-                <label for="articleDescription"> Article Description </label>
+
+
+                <label for="articleDescription"> Student Email </label>
                 <textarea id="articleDescription" th:field="*{description}" class="form-control "></textarea>
                 <div class="form-text text-danger " th:errors="*{description}"> </div>
 
@@ -53,10 +53,10 @@
 
                 <div class="d-flex justify-content-between mt-2">
                     <button class="btn btn-warning" type="submit"> Post Article </button>
-                    <button class="btn btn-danger"> Cancel</button>
+                    <a href="index" class="btn btn-danger"> Cancel</a>
                 </div>
 
-                
+
             </div>
         </div>
     </form>

@@ -13,12 +13,16 @@ import org.springframework.web.multipart.MultipartFile;
 @AllArgsConstructor
 public class ArticleRequest {
 
-    @NotEmpty(message = "Title cannot be empty !")
+    private int id;
+    @NotEmpty(message = "Title cannot be empty!")
     private String title;
-    @NotEmpty(message="Description cannot be empty!")
+    @NotEmpty(message = "Gmail cannot be empty!")
     private String description;
-
     private MultipartFile file;
-   // @Pattern(regexp ="\\d+", message = " AuthorID can only be number ")
-    private int authorID;
+    //    @Pattern(regexp = "^[0-9]*$", message = "Author ID can only be number")
+    private int authorId;
+    private int[] categoryId;
+    private String imgURL;
+
 }
+

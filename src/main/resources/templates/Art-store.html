@@ -6,27 +6,26 @@
         layout:decorate="~{layouts/master-layout}">
 <head>
     <meta charset="UTF-8">
-    <title>Home page</title>
+    <title>Art Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
     <style>
-        .card{
-            /*padding: 2%;*/
-            position: center;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            /*width: 50%;*/
-            background-size: 50%;
+        .container{
+            padding: 3%;
         }
-
-
     </style>
 </head>
 <body>
-
+<div>
     <div th:insert="~{fragment/navber-nav::artcleCard(navbar)} "></div>
-    <div th:insert="~{fragment/my-kmav-dai::artcleCard(nav)}"></div>
-    <section th:insert="~{fragment/table-all-article::artcleCard(table)}"> </section>
-
+    <div class="album bg-body-tertiary">
+        <div class="container">
+            <div class="row ">
+                <div class="col-3" th:each="user: ${users}">
+                    <div th:insert="~{fragment/article-card::articleCard(title)}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
